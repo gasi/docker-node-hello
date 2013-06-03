@@ -14,5 +14,8 @@ RUN     yum install -y npm-1.2.17-5.el6
 
 # App
 ADD . /src
+# Install app dependencies
+RUN cd /src; npm install
+
 EXPOSE  8080
 CMD ["node", "/src/index.js"]
